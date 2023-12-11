@@ -35,6 +35,8 @@ frames by hand for training ST-GCN model.
 - SPPE FastPose (AlphaPose) 
 - ST-GCN action recognition
 
+You can download the models from this link: https://drive.google.com/drive/folders/1jAfaj1E7_TRzYkr-1dbbsFsnNjvmaBH7?usp=drive_link
+Past the models inside the /fall-detection-using-yolo-ML/Yolo-model-implementation/models/
 ## Usage
 ```
 cd Yolo-model-implementation
