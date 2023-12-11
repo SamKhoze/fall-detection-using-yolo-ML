@@ -37,8 +37,8 @@ frames by hand for training ST-GCN model.
 
 ## Usage
 ```
-    cd/Yolo-model-implementation
-    python main.py -C 0
+cd/Yolo-model-implementation
+python main.py -C 0
 ```
 
 
