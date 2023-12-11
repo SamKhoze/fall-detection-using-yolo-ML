@@ -37,7 +37,7 @@ frames by hand for training ST-GCN model.
 
 ## Usage
 ```
-cd/Yolo-model-implementation
+cd Yolo-model-implementation
 python main.py -C 0
 ```
 
@@ -51,7 +51,7 @@ features which are processed by an LSTM classifier.
 
 ## Usage
 ```shell script
-cd/Human-Fall-Torch
+cd Human-Fall-Torch
 python fall_detector.py
 ```
 <TABLE>
