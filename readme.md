@@ -1,7 +1,10 @@
 # setup Project
 
 ## Create Env 
-conda create -p env/ python=3.8
+conda create --name falldetection python=3.8
+
+## Activate conda env
+conda activate falldetection
 
 ## Install all the dependencies
 pip install -r requirements.txt
