@@ -54,6 +54,8 @@ features which are processed by an LSTM classifier.
 cd Human-Fall-Torch
 python fall_detector.py
 ```
+Human-Fall-Torch/examples/fall.gif
+
 <TABLE>
 <TR><TH style="width:120px">Argument</TH><TH style="width:300px">Description</TH><TH>Default</TH></TR>
 <TR><TD>num_cams</TD> <TD>Number of Cameras/Videos to process</TD><TD>1</TD></TR>
