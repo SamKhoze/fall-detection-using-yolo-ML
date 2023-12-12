@@ -284,7 +284,7 @@ def alg2_sequential(queues, argss, consecutive_frames, event):
                     color = (0, 0, 255)
                 elif "warning" in activity_name.lower():
                     color = (255, 255, 0)
-                img = cv2.circle(img, (1200,70), 50, color , -1) 
+                img = cv2.circle(img, (1800,70), 50, color , -1) 
                 print(activity_name)
                 cv2.imshow(window_names[0], img)
 
