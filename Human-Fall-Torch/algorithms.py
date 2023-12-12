@@ -275,9 +275,16 @@ def alg2_sequential(queues, argss, consecutive_frames, event):
             if argss[0].num_cams == 1:
                 num_matched, new_num, indxs_unmatched = match_ip(ip_sets[0], kp_frames[0], lstm_sets[0], num_matched, max_length_mat)
                 valid1_idxs, prediction = get_all_features(ip_sets[0], lstm_sets[0], model)
-                activity_name = activity_dict[prediction+5] if prediction > 12 else activity_dict[prediction]
+                activity_name = activity_dict[prediction+5] #if prediction > 12 else activity_dict[prediction]
                 dict_frames[0]["tagged_df"]["text"] += f" Pred: {activity_name}"
                 img, output_videos[0] = show_tracked_img(dict_frames[0], ip_sets[0], num_matched, output_videos[0], argss[0])
+                color = (0, 255, 0)
+                if "fall" in activity_name.lower():
+                    print("here..")
+                    color = (0, 0, 255)
+                elif "warning" in activity_name.lower():
+                    color = (255, 255, 0)
+                img = cv2.circle(img, (1200,70), 50, color , -1) 
                 print(activity_name)
                 cv2.imshow(window_names[0], img)
 
