@@ -15,7 +15,8 @@ from scipy.signal import savgol_filter, lfilter
 from model.model import LSTMModel
 import torch
 import math
-
+from playsound import playsound
+import threading
 
 def get_source(args):
     tagged_df = None
@@ -237,8 +238,9 @@ def match_unmatched(unmatched_1, unmatched_2, lstm_set1, lstm_set2, num_matched)
 
     return final_pairs, new_matched_1, new_matched_2, new_lstm1, new_lstm2
 
-
+flag = True
 def alg2_sequential(queues, argss, consecutive_frames, event):
+    global flag
     model = LSTMModel(h_RNN=48, h_RNN_layers=2, drop_p=0.1, num_classes=7)
     model.load_state_dict(torch.load('model/lstm_weights.sav',map_location=argss[0].device))
     model.eval()
@@ -284,6 +286,7 @@ def alg2_sequential(queues, argss, consecutive_frames, event):
                     color = (0, 0, 255)
                 elif "warning" in activity_name.lower():
                     color = (255, 255, 0)
+                    th = threading.Thread(target=voice_thread).start()
                 x = img.shape
                 img = cv2.circle(img, (x[1]-100,130), 50, color , -1) 
                 print(activity_name)
@@ -550,3 +553,7 @@ def get_frame_features(ip_set, new_frame, re_matrix, gf_matrix, num_matched, max
             pop_and_add(gf_matrix[i], 0, max_length_mat)
 
     return
+
+
+def voice_thread():
+    playsound("warning.mp3")
